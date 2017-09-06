@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
+var utils = require('./utils.js');
 var SlackBot = require('./slack.js');
 
 var server = app.listen(8081, function () {
@@ -18,7 +19,7 @@ app.get('/', function (req, res) {
 })
 
 function sendSlackMessage (responseBody) {
-    var formatted = nickelBot.parseRequestBody(responseBody);
+    var formatted = utils.parseRequestBody(responseBody);
     nickelBot.displayNewRequest(formatted);
 }
 
