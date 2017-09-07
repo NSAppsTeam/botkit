@@ -2,7 +2,7 @@
   "name": "nickelBot",
   "version": "0.0.1",
   "description": "nickels and merge requests",
-  "main": "lib/Botkit.js",
+  "main": "nickelbot/server.js",
   "types": "lib/Botkit.d.ts",
   "dependencies": {
     "async": "^2.1.5",
@@ -39,7 +39,8 @@
     "pretest": "jscs ./lib/ ./__test__ --fix",
     "test": "jest --coverage",
     "test-legacy": "mocha ./tests/*.js",
-    "test-watch": "jest --watch"
+    "test-watch": "jest --watch",
+    "start": "node nickelbot/server.js"
   },
   "repository": {
     "type": "git",
