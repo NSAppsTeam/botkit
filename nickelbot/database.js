@@ -1,14 +1,11 @@
 var MongoClient = require('mongodb').MongoClient;
 
 // Connection URL
-var url = 'mongodb://localhost:27017/nickelbot';
-
-// Use connect method to connect to the server
-
+var mongoUrl = 'mongodb://localhost:27017/nickelbot';
 
 class Database {
     constructor() {
-        MongoClient.connect(url, function(err, db) {
+        MongoClient.connect(mongoUrl, function(err, db) {
             if (err) {
                 console.log('Error connecting to database: ' + err);
                 exit();
