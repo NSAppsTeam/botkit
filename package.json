@@ -2,7 +2,7 @@
   "name": "nickelBot",
   "version": "0.0.1",
   "description": "nickels and merge requests",
-  "main": "nickelbot/server.js",
+  "main": "src/server.js",
   "types": "lib/Botkit.d.ts",
   "dependencies": {
     "async": "^2.1.5",
@@ -34,6 +34,7 @@
     "should": "^11.2.1",
     "should-sinon": "0.0.5",
     "sinon": "^2.1.0",
+    "webpack": "^3.5.6",
     "winston": "^2.3.1"
   },
   "scripts": {
@@ -41,16 +42,12 @@
     "test": "jest --coverage",
     "test-legacy": "mocha ./tests/*.js",
     "test-watch": "jest --watch",
-    "start": "node nickelbot/server.js"
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/howdyai/botkit.git"
   },
-  "bugs": {
-    "url": "https://github.com/howdyai/botkit/issues"
-  },
-  "homepage": "http://howdy.ai/botkit",
   "keywords": [
     "bots",
     "chatbots",

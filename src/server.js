@@ -20,13 +20,18 @@ app.get('/', function (req, res) {
 
 function sendSlackMessage (responseBody) {
     var formatted = utils.parseRequestBody(responseBody);
-    nickelBot.displayNewRequest(formatted);
+    if (!formatted.merge_request.work_in_progress) {
+        nickelBot.displayNewRequest(formatted);
+    }
 }
 
 /* WebHook Post entry point. */
 app.post('/webhook', jsonParser, function(req, res, next) {
-        console.log('Webhook received!');
-        sendSlackMessage(req.body);
+    console.log('Webhook received!');
 
-        res.send('yay, webhook works!');
+    res.send('yay, webhook works!');
+
+    if (req.headers['x-gitlab-event'] === 'Merge Request Hook') {
+        sendSlackMessage(req.body);
+    };
 });
