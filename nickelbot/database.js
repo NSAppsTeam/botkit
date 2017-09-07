@@ -79,4 +79,4 @@ class Database {
     }
 }
 
-var test = new Database();
+module.exports = Database;
